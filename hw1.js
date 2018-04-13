@@ -1,15 +1,14 @@
 var video=[
-        {id:"Z-5zUm8U2o8", genre:"音樂", lang:"未歸類", tag:"tag", feature:1, recommend:1, fav:0, name:"Chaos Time"},
-        {id:"twyuPTw0AyY", genre:"音樂", lang:"未歸類", tag:"tag", feature:1, recommend:0, fav:0, name:"Garakuta Doll Play"},
-        {id:"ar8S6virCwM", genre:"音樂", lang:"未歸類", tag:"tag", feature:1, recommend:0, fav:0, name:"MIYABeam"},
-        {id:"paREY4LLwEY", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:0, fav:0, name:"Ed Sheeran- Perfect"},
-        {id:"9bAiXJoNdy0", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:1, fav:0, name:"Ed Sheeran- Photograph"},
-        {id:"Y7bxlR-MxxM", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:0, fav:0, name:"Ed Sheeran- Thinking Out Loud"},
-        {id:"A_DRNbpsU3Q", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:0, fav:0, name:"One OK ROCK- Listen"},
-        {id:"stxQq0kI4pk", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:1, fav:0, name:"Evanescence- My Immortal"},
-        {id:"wAZswdN2baQ", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:1, fav:0, name:"Bon Jovi- It's My Life"},
-        {id:"OjEkotGQxzA", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:0, fav:0, name:"Maroon 5- Won't Go Home Without You"}];
-
+        {id:"OEAsS7leOSw", genre:"音樂", lang:"未歸類", tag:"tag", feature:1, recommend:1, fav:0, name:"Chaos Time"},
+        {id:"HGxcnEjmFOA", genre:"音樂", lang:"未歸類", tag:"tag", feature:1, recommend:0, fav:0, name:"Garakuta Doll Play"},
+        {id:"6WTN4jsq4Yg", genre:"音樂", lang:"未歸類", tag:"tag", feature:1, recommend:0, fav:0, name:"MIYABeam"},
+        {id:"2Vv-BfVoq4g", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:0, fav:0, name:"Ed Sheeran- Perfect"},
+        {id:"nSDgHBxUbVQ", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:1, fav:0, name:"Ed Sheeran- Photograph"},
+        {id:"lp-EO5I60KA", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:0, fav:0, name:"Ed Sheeran- Thinking Out Loud"},
+        {id:"HdWnPr52M1k", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:0, fav:0, name:"One OK ROCK- Listen"},
+        {id:"5anLPw0Efmo", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:1, fav:0, name:"Evanescence- My Immortal"},
+        {id:"vx2u5uUu3DE", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:1, fav:0, name:"Bon Jovi- It's My Life"},
+        {id:"VlMEGBsw6j8", genre:"音樂", lang:"英文", tag:"tag", feature:1, recommend:0, fav:0, name:"Maroon 5- Won't Go Home Without You"}];
 
 function Mark(e, id)
 {
@@ -24,7 +23,7 @@ function cardStruct(i)
     str+="<li class=\"span2\">";
     str+="<div class=\"thumbnail mycard\">";
     str+="<div>";
-    str+="<a href=\"hw1page2.html?v="+video[i].id+"\">";
+    str+="<a href=\"http://youtube.com/watch?v="+video[i].id+"\">";
     str+="<img class=\"card-img-top rounded\" src=\"http://img.youtube.com/vi/"+video[i].id+"/sddefault.jpg\">";
     str+="</a>";
     str+="</div>";
@@ -55,7 +54,7 @@ function sidebarStruct(i, type)
     
     return str;
 }
-
+        
 function searchVideo()
 {
     var str="", card="<ul class=\"video-list\">";
@@ -64,7 +63,6 @@ function searchVideo()
     for(var i=0; i<video.length; i++)
     {
         var obj=video[i].name.toLowerCase();
-        console.log(search_str);
         if(obj.indexOf(search_str)!=-1)
         {
             cnt++;
@@ -72,16 +70,14 @@ function searchVideo()
         }
     }
     
-    str+="<div id=\"search_result_top\">搜尋 "+search_str+" :</div>";
+    str+="<div id=\"search_result_top\">搜尋 "+search_str+" : </div>";
     str+="<pre>";
     if(cnt<=0) str+="找不到相關結果";
     else str+="找到 "+cnt+" 個結果";
     str+="</pre>";
     
-    
     card+="</ul>";
     document.getElementById("card").innerHTML=str+card;
-    
 }
 
 function searchByTag(name, type)
@@ -99,12 +95,11 @@ function searchByTag(name, type)
         }
     }
     
-    str+="<div id=\"search_result_top\">搜尋 "+search_str+" 標籤:</div>";
+    str+="<div id=\"search_result_top\">搜尋 "+search_str+" 標籤 : </div>";
     str+="<pre>";
     if(cnt<=0) str+="找不到相關結果";
     else str+="找到 "+cnt+" 個結果";
     str+="</pre>";
-    
     
     card+="</ul>";
     document.getElementById("card").innerHTML=str+card;
@@ -119,7 +114,7 @@ function loadAll()
 
 function loadVideo()
 {
-    var str="", card="<ul class=\"video-list\">";
+    var str="", card="<h3 class=\"video-title\"> Latest Videos </h3><ul class=\"video-list\">";
     var cnt=0;
     search_str=document.getElementById("searchString").value.toLowerCase();
     for(var i=0; i<video.length; i++) card+=cardStruct(i);
@@ -127,14 +122,42 @@ function loadVideo()
     document.getElementById("card").innerHTML=card;
 }
 
+function shuffle(array)
+{
+    var tmp, current, top=array.length;
+    if(top)
+    {
+        while(--top)
+        {
+            current=Math.floor(Math.random()*(top+1));
+            tmp=array[current];
+            array[current]=array[top], array[top]=tmp;
+        }
+    }
+    return array;
+}
+
+function randomGenerator(head, tail, num)
+{
+    var arr=[], res=[];
+    if(tail<head)
+    {
+        console.log("隨機亂數產生器錯誤：範圍上界應大於等於下界");
+        return null;
+    }
+    for(var i=head; i<tail; i++) arr[i-head]=i;
+    arr=shuffle(arr);
+    for(var i=0; i<num; i++) res[i]=arr[i];
+    return res;
+}
+
 function loadFeatured()
 {
     var str="<span>精選影片</span><br>";
     var cnt=0;
-    for(var i=0; i<video.length; i++)
-    {
-        if(video[i].feature==1) str+=sidebarStruct(i, "feature");
-    }
+    var res=[];
+    var arr=randomGenerator(0, video.length, 3);
+    for(var i=0; i<3; i++) str+=sidebarStruct(arr[i], "feature");
     document.getElementById("feature").innerHTML=str;
 }
 
@@ -142,9 +165,8 @@ function loadRecommend()
 {
     var str="<span>推薦影片</span><br>";
     var cnt=0;
-    for(var i=0; i<video.length; i++)
-    {
-        if(video[i].recommend==1) str+=sidebarStruct(i, "recommend");
-    }
+    var res=[];
+    var arr=randomGenerator(0, video.length, 3);
+    for(var i=0; i<3; i++) str+=sidebarStruct(arr[i], "recommend");
     document.getElementById("recommend").innerHTML=str;
 }

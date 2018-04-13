@@ -17,7 +17,9 @@ body {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	word-wrap: break-word;
+	color: #555;
 }
+
 .recommend {
     width:100%;
     text-align: center;
@@ -27,6 +29,7 @@ body {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	word-wrap: break-word;
+	color: #666;
 }
 #navigation_bar {
     
@@ -51,7 +54,7 @@ footer {
 }
 
 .mycard a{
-	color: inherit;
+	color: #666;
 	cursor: pointer;
 	data-toggle: tooltip;
 	data-placement: top;
@@ -60,6 +63,12 @@ footer {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	word-wrap: break-word;
+}
+
+.video-title{
+	color: #777;
+	margin-left: 6rem;
+	margin-bottom: 3rem;
 }
 
 .video-list li{
@@ -90,24 +99,12 @@ pre{
     cursor: pointer;
 }
 
-
-
-#playlist{
-
-	height: 314px;
-	display: block;
-	overflow-x: hidden; 
-	overflow-y: scroll;
-}
-
-
-.theClassInTdWhichEachContentUse{
-	vertical-align: middle;
-
-}
-
-
-.playImage{
-	font-size: 150%;
-	vertical-align: top;
-}
+hr{ 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+} 
