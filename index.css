@@ -174,10 +174,11 @@ hr{
 }
 
 #playlist{
-	height: 314px;
+	height: 50%;
 	display: block;
 	overflow-x: hidden; 
 	overflow-y: scroll;
+    background-color: #DEDEDE;
 }
 
 .theClassInTdWhichEachContentUse{

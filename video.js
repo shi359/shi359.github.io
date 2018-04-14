@@ -65,6 +65,10 @@
         a = document.createElement("a");
         a.href = "javascript:playInParagraph("+eachVideoData[eachVideoIdMap[videoid]][j].startTime+","+eachVideoData[eachVideoIdMap[videoid]][j].endTime+");";
         //a.onclick = "function() {playInParagraph("+data.sites[j].startTime+","+data.sites[j].endTime+")}";
+        a.onclick = function () {
+            clearBackground();
+            this.parentElement.parentElement.childNodes[1].style.backgroundColor="#BBBBBB";
+        };
         i = document.createElement("i");
         i.className = "fas fa-play-circle";
 
@@ -99,6 +103,7 @@
           videoId: videoid,
 
         });
+        document.getElementById("playlist").style.height = document.getElementById("player").height+"px";
       }
       var whenParagraphShouldStop;
       function playInParagraph(startTime,endTime) {
@@ -130,6 +135,13 @@
     
         return query.substring(iStart, iEnd);
       }
+      
+      function clearBackground()
+      {
+          var class_item = document.getElementsByClassName("theClassInTdWhichEachContentUse");
+          for(var i=0; i<class_item.length; i++) class_item[i].style.backgroundColor="transparent";
+      }
+      
       
       var video_topic = video_info[parseInt(eachVideoIdMap[videoid])-1].name;
       document.getElementById("video_topic").innerHTML = "<h2>"+video_topic+"</h2>";
