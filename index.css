@@ -71,6 +71,12 @@ footer {
 	margin-bottom: 3rem;
 }
 
+.sidebar-title{
+	color: #777;
+	margin-left: 0rem;
+	margin-bottom: 1rem;
+}
+
 .video-list li{
 	list-style-type: none;
 	display: inline-block;
@@ -107,4 +113,50 @@ hr{
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
-} 
+}
+
+.tag-block{
+    padding: 2px;
+}
+
+.tag-block button{
+    width: 100%;
+    border-radius: 0px;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.btn-other{
+    background-color: #777777;
+    color: #FFFFFF;
+}
+
+.btn-other:hover{
+    background-color: #555555;
+    color: #FFFFFF;
+}
+
+#title_banner{
+    font-size: 4.5em;
+    overflow: hidden;
+    padding-left: 40px;
+    opacity: 0;
+}
+
+#playlist{
+	height: 314px;
+	display: block;
+	overflow-x: hidden; 
+	overflow-y: scroll;
+}
+
+.theClassInTdWhichEachContentUse{
+	vertical-align: middle;
+}
+
+.playImage{
+	font-size: 150%;
+	vertical-align: top;
+}
